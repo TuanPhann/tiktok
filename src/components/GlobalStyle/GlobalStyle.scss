@@ -3,13 +3,44 @@
 
 :root {
     --primary-color: rgb(254, 44, 85);
+    --search-color: rgba(22, 24, 35, 0.2);
+    --white-text: #fff;
+
+    //width layout
+    --layout-width: 1150px;
 }
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     text-rendering: optimizeSpeed;
+}
+
+.container {
+    width: var(--layout-width);
+    height: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+.content {
+    width: 70.4%;
+    height: 100%;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
 }

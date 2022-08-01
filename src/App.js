@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { publicRouter } from '~/routes/index';
+import { publicRouter } from '~/routes';
 import DefaultLayout from './components/Layout/Default';
 import { Fragment } from 'react';
 
