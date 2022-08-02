@@ -6,12 +6,51 @@ import images from '~/assets/images';
 import Tippy from '@tippyjs/react/headless';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleXmark,
+    faSpinner,
+    faMagnifyingGlass,
+    faPlus,
+    faEllipsisVertical,
+    faGlobe,
+    faCircleQuestion,
+    faKeyboard,
+} from '@fortawesome/free-solid-svg-icons';
 import WrapperHeader from '~/components/poperHeader';
 import InfoAccount from '~/components/searchAccount';
 import Button from '~/components/Button';
+import MenuHeader from '~/components/poperHeader/menuHeader';
 
 const cx = classNames.bind(styles);
+
+const INFO_MENU = [
+    {
+        icon: <FontAwesomeIcon icon={faGlobe} />,
+        title: 'English',
+        children: {
+            title: 'language',
+            data: [
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcut',
+    },
+];
 
 function Header() {
     const [searchAccount, setSearchAccount] = useState([]);
@@ -66,6 +105,11 @@ function Header() {
                     <Button btnMedium spaceBtn>
                         Login
                     </Button>
+                    <MenuHeader items={INFO_MENU}>
+                        <button className={cx('btn-menu')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </MenuHeader>
                 </div>
             </div>
         </header>

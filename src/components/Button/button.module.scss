@@ -75,3 +75,17 @@
 .icon {
     margin-right: 10px;
 }
+
+.btnMenu {
+    border: none;
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+}

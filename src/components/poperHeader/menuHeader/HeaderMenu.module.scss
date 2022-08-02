@@ -1,0 +1,28 @@
+.menu-setting {
+    width: 230px;
+}
+
+.language {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+}
+
+.btn-language {
+    font-size: 18px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+}

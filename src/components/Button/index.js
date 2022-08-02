@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 function Button({
     to,
     href,
+    btnMenu = false,
     btnMedium = false,
     btnLarge = false,
     btnSmall = false,
@@ -31,6 +32,7 @@ function Button({
         btnSmall,
         btnGetUp,
         btnUpload,
+        btnMenu,
         spaceBtn,
     });
 

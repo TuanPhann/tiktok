@@ -7,3 +7,10 @@
     max-height: min((100vh - 96px) - 60px, 734px);
     padding-top: 8px;
 }
+
+.item-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: none;
+}
