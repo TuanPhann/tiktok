@@ -32,7 +32,6 @@ function MenuHeader({ children, items = [] }) {
 
     return (
         <Tippy
-            visible
             placement="top-end"
             interactive
             delay={[400, 600]}
@@ -51,6 +50,7 @@ function MenuHeader({ children, items = [] }) {
                     </WrapperHeader>
                 </div>
             )}
+            onHide={() => setHistory((prew) => prew.slice(0, 1))}
         >
             {children}
         </Tippy>

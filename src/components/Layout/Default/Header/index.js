@@ -68,35 +68,37 @@ function Header() {
                     <img src={images.logo} alt="logo tiktok" />
                 </div>
 
-                <Tippy
-                    interactive
-                    visible={searchAccount.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('result')} tabIndex="-1" {...attrs}>
-                            <WrapperHeader>
-                                <div className={cx('account')}>
-                                    <h4>Account</h4>
-                                </div>
-                                <InfoAccount />
-                                <InfoAccount />
-                                <InfoAccount />
-                                <InfoAccount />
-                                <InfoAccount />
-                            </WrapperHeader>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input placeholder="Secrch account and videos" spellCheck={false} />
-                        <button className={cx('close')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-                        <button className={cx('btn-search')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </Tippy>
+                <div className={cx('search')}>
+                    <Tippy
+                        interactive
+                        visible={searchAccount.length > 0}
+                        render={(attrs) => (
+                            <div className={cx('result')} tabIndex="-1" {...attrs}>
+                                <WrapperHeader>
+                                    <div className={cx('account')}>
+                                        <h4>Account</h4>
+                                    </div>
+                                    <InfoAccount />
+                                    <InfoAccount />
+                                    <InfoAccount />
+                                    <InfoAccount />
+                                    <InfoAccount />
+                                </WrapperHeader>
+                            </div>
+                        )}
+                    >
+                        <>
+                            <input placeholder="Secrch account and videos" spellCheck={false} />
+                            <button className={cx('close')}>
+                                <FontAwesomeIcon icon={faCircleXmark} />
+                            </button>
+                            <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
+                        </>
+                    </Tippy>
+                    <button className={cx('btn-search')}>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    </button>
+                </div>
 
                 <div className={cx('header-right')}>
                     <Button btnUpload spaceBtn leftIcon={<FontAwesomeIcon icon={faPlus} />}>
