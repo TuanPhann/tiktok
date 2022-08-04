@@ -32,9 +32,10 @@ function MenuHeader({ children, items = [] }) {
 
     return (
         <Tippy
+            offset={[20, 14]}
             placement="top-end"
             interactive
-            delay={[400, 600]}
+            delay={[300, 600]}
             render={(attrs) => (
                 <div className={cx('menu-setting')} tabIndex="-1" {...attrs}>
                     <WrapperHeader className={cx('item-menu')}>

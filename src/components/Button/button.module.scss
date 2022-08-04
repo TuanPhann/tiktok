@@ -81,7 +81,8 @@
     display: block;
     text-align: left;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: 'ProximaNova', sans-serif;
     padding: 15px;
 
     &:hover {
@@ -89,3 +90,8 @@
         cursor: pointer;
     }
 }
+
+//border top logout
+// .borderTop {
+//     border-top: 1px solid rgba(22, 24, 35, 0.12);
+// }

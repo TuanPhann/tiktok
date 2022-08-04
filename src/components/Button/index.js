@@ -1,7 +1,6 @@
 import styles from './button.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const cx = classNames.bind(styles);
 
@@ -16,6 +15,7 @@ function Button({
     btnUpload = false,
     spaceBtn = false,
     leftIcon = false,
+    borderTop = false,
     children,
     onClick,
     ...passProp
@@ -34,6 +34,7 @@ function Button({
         btnUpload,
         btnMenu,
         spaceBtn,
+        borderTop,
     });
 
     if (to) {
