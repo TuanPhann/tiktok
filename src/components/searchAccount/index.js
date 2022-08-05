@@ -1,27 +1,28 @@
+import PropTypes from 'prop-types';
 import styles from './searchAccount.module.scss';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import Image from '../images';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-function InfoAccount() {
+function InfoAccount({ data }) {
     return (
-        <div className={cx('search-account')}>
-            <img
-                className={cx('avatar')}
-                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/ddcb57a7bcd8bf0fc01c18338b2caf59.jpeg?x-expires=1659528000&x-signature=GHCgARQ546fZ7qbwNj%2B%2FT321PGo%3D"
-                alt="img avatar"
-            />
+        <Link to={`/@${data.nickname}`} className={cx('search-account')}>
+            <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
             <div className={cx('info-account')}>
-                <span className={cx('name')}>Nguyen van A</span>
-                <span className={cx('search-check')}>
-                    <FontAwesomeIcon icon={faCheckCircle} />
-                </span>
-                <p className={cx('addrees')}>Nguyen van B</p>
+                <span className={cx('name')}>{data.full_name}</span>
+                <span className={cx('search-check')}>{data.tick && <FontAwesomeIcon icon={faCheckCircle} />}</span>
+                <p className={cx('addrees')}>{data.nickname}</p>
             </div>
-        </div>
+        </Link>
     );
 }
+
+InfoAccount.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 
 export default InfoAccount;

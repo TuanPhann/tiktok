@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './HeaderMenu.module.scss';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
@@ -8,7 +9,7 @@ import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-function MenuHeader({ children, items = [] }) {
+function MenuHeader({ children, items = [], hideonClick = false }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
@@ -35,19 +36,20 @@ function MenuHeader({ children, items = [] }) {
             offset={[20, 14]}
             placement="top-end"
             interactive
-            delay={[300, 600]}
+            hideOnClick={hideonClick}
+            delay={[300, 400]}
             render={(attrs) => (
                 <div className={cx('menu-setting')} tabIndex="-1" {...attrs}>
                     <WrapperHeader className={cx('item-menu')}>
                         {history.length > 1 && (
                             <HeaderLanguage
-                                title="Language"
+                                title={current.title}
                                 onBack={() => {
                                     setHistory((prew) => prew.slice(0, prew.length - 1));
                                 }}
                             />
                         )}
-                        {renderItem()}
+                        <div className={cx('menu-language')}> {renderItem()}</div>
                     </WrapperHeader>
                 </div>
             )}
@@ -58,4 +60,9 @@ function MenuHeader({ children, items = [] }) {
     );
 }
 
+MenuHeader.propTypes = {
+    children: PropTypes.node.isRequired,
+    items: PropTypes.array,
+    hideonClick: PropTypes.bool,
+};
 export default MenuHeader;

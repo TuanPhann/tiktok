@@ -2,7 +2,9 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '~/assets/images';
 import Tippy from '@tippyjs/react';
+import { Link } from 'react-router-dom';
 
+import routes from '~/config/routes';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -32,6 +34,14 @@ const INFO_MENU = [
         children: {
             title: 'language',
             data: [
+                {
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
                 {
                     code: 'en',
                     title: 'English',
@@ -87,7 +97,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo-tiktok')}>
-                    <img src={images.logo} alt="logo tiktok" />
+                    <Link to={routes.home}>
+                        <img src={images.logo} alt="logo tiktok" />
+                    </Link>
                 </div>
 
                 <Search />

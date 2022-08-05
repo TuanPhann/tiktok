@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './HeaderMenu.module.scss';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,5 +16,10 @@ function HeaderLanguage({ title, onBack }) {
         </header>
     );
 }
+
+HeaderLanguage.propTypes = {
+    title: PropTypes.string.isRequired,
+    onBack: PropTypes.func.isRequired,
+};
 
 export default HeaderLanguage;
